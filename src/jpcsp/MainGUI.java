@@ -1836,7 +1836,9 @@ private void switchUmdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             Modules.SysMemUserForUserModule.setMemory64MB(psf.getNumeric("MEMSIZE") == 1);
 
             State.discId = discId;
-
+            // Add support of patcher
+            if(!discId.equals("[unknown, umd]") && loadUnpackedUMD((new StringBuilder()).append(discId).append(".BIN").toString()) || loadUMD(iso, "PSP_GAME/SYSDIR/BINOT.BIN")|| loadUMD(iso, "PSP_GAME/SYSDIR/EBOOT.BI")|| loadUMD(iso, "PSP_GAME/SYSDIR/EBOOT.DAT") || loadUMD(iso, "PSP_GAME/SYSDIR/EBOOT.LLD") || loadUMD(iso, "PSP_GAME/SYSDIR/OLD_EBOOT.BIN") || loadUMD(iso, "PSP_GAME/SYSDIR/EBOOT.123") || loadUMD(iso, "PSP_GAME/SYSDIR/EBOOT_LRC_CH.BIN") || loadUMD(iso, "PSP_GAME/SYSDIR/BOOT0.OLD") || loadUMD(iso, "PSP_GAME/SYSDIR/BOOT1.OLD") || loadUMD(iso, "PSP_GAME/SYSDIR/EBOOT.OLD") || !discId.equals("[unknown, umd]") && loadUnpackedUMD((new StringBuilder()).append(Connector.baseDirectory).append(discId).append(File.separatorChar).append("EBOOT.BIN").toString()) || loadUMD(iso, "PSP_GAME/SYSDIR/BOOT.BIN") || loadUMD(iso, "PSP_GAME/SYSDIR/EBOOT.BIN")){            
+            /*
             if ((!discId.equals(State.DISCID_UNKNOWN_UMD) && loadUnpackedUMD(discId + ".BIN")) ||
                 // Try to load a previously decrypted EBOOT.BIN (faster)
                 (!discId.equals(State.DISCID_UNKNOWN_UMD) && loadUnpackedUMD(Connector.baseDirectory + discId + File.separatorChar + "EBOOT.BIN")) ||
@@ -1845,6 +1847,7 @@ private void switchUmdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 loadUMD(iso, "PSP_GAME/SYSDIR/EBOOT.BIN") ||
                 // As the last chance, try to load the BOOT.BIN
                 loadUMD(iso, "PSP_GAME/SYSDIR/BOOT.BIN")) {
+                */            
 
                 State.title = title;
 
