@@ -16,6 +16,8 @@ along with Jpcsp.  If not, see <http://www.gnu.org/licenses/>.
  */
 package jpcsp.HLE.modules150;
 
+
+import jpcsp.State;
 import static jpcsp.HLE.modules150.scePsmf.PSMFStream.PSMF_ATRAC_STREAM;
 import static jpcsp.HLE.modules150.scePsmf.PSMFStream.PSMF_AUDIO_STREAM;
 import static jpcsp.HLE.modules150.scePsmf.PSMFStream.PSMF_AVC_STREAM;
@@ -1701,6 +1703,12 @@ public class sceMpeg extends HLEModule {
      */
     @HLEFunction(nid = 0xFE246728, version = 150, checkInsideInterrupt = true)
     public int sceMpegGetAvcAu(@CheckArgument("checkMpegHandle") int mpeg, int streamUid, TPointer auAddr, @CanBeNull TPointer32 attrAddr) {
+    	if ("ULJM06025".equals(State.discId) || "ULJM05843".equals(State.discId)) {
+        	//Solve Harukanaru Toki no Naka de 5: Kazahanaki - JPN - ULJM06025
+        	//and  Harukanaru Toki no Naka de 5 - JPN - ULJM05843
+        		log.warn("Hack:disable Media Engine for this game");
+        		return -1;
+        }
         if (mpegRingbuffer != null) {
             mpegRingbuffer.read(mpegRingbufferAddr);
         }
