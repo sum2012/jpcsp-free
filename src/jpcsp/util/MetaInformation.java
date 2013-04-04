@@ -24,7 +24,7 @@ public class MetaInformation {
     public static String NAME = "Jpcsp";
     public static String VERSION = "v0.6";
     public static String FULL_NAME = NAME + " " + VERSION;
-    public static String OFFICIAL_SITE = "http://home.i-cable/wu";
+    public static String OFFICIAL_SITE = "http://home.i-cable.com/wu";
     public static String OFFICIAL_FORUM = "http://www.emunewz.net/forum/forumdisplay.php?fid=51";
     public static String OFFICIAL_REPOSITORY = "http://code.google.com/p/jpcsp/";
     public static String TEAM = "JPCSP Team: gid15, hlide, Hykem, Orphis, shadow.<br/>" +
