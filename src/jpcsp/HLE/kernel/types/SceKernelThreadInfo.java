@@ -307,8 +307,9 @@ public class SceKernelThreadInfo extends pspAbstractMemoryMappedStructureVariabl
         cpuContext.npc = entry_addr; // + 4;
 
         // Reset all the registers to DEADBEEF value
+        //The DEADBEEF value break Tales of VS - ULJS00209
         for (int i = _ra; i > _zr; i--) {
-        	cpuContext.setRegister(i, 0xDEADBEEF);
+        	cpuContext.setRegister(i, 0x00400000);
         }
         cpuContext._k0 = 0;
         cpuContext._k1 = 0;
