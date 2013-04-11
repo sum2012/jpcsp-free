@@ -38,7 +38,7 @@ public class MetaInformation {
 	            if (customName.isEmpty()) {
 	                System.err.println("first line of title.txt is blank or file is empty");
 	            } else {
-	                FULL_NAME = NAME + "Free " + VERSION + " " + customName;
+	                FULL_NAME = NAME + " Free " + VERSION + " " + customName;
 	            }
             }
         } catch (IOException e) {
